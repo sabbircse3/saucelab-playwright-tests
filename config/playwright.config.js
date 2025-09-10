@@ -9,4 +9,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
+  use: {
+  storageState: 'storageState.json'
+}
 });

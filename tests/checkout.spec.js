@@ -16,7 +16,7 @@ test('Checkout flow using saved session', async ({ page }) => {
   await products.addMatchingItems();
 
   // wait until cart badge is visible (increase timeout)
-  await products.cartBadge.waitFor({ state: 'visible', timeout: 10000 });
+  await products.cartBadge.waitFor({ state: 'visible', timeout: 15000  });
 
   // click on cart badge
   await products.goToCart();

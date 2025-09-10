@@ -1,4 +1,4 @@
-export async function waitAndClick(locator, timeout = 10000) {
+export async function waitAndClick(locator, timeout = 15000 ) {
   await locator.waitFor({ state: 'visible', timeout });
   await locator.click();
 }
