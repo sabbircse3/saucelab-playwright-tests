@@ -1,3 +1,4 @@
+// pages/ProductsPage.js
 export class ProductsPage {
   constructor(page) {
     this.page = page;
@@ -5,6 +6,7 @@ export class ProductsPage {
     this.cartBadge = page.locator('[data-test="shopping-cart-badge"]');
   }
 
+  // Method to add specific items to the cart
   async addMatchingItems() {
     const matchedNames = await this.page.$$eval('.inventory_item_name', elements =>
       elements
@@ -19,6 +21,7 @@ export class ProductsPage {
         .map(el => el.textContent.trim())
     );
 
+    // Iterate through items and add matched ones to the cart
     const allItems = await this.items.all();
     for (const item of allItems) {
       const name = (await item.locator('.inventory_item_name').textContent()).trim();
@@ -28,6 +31,8 @@ export class ProductsPage {
     }
   }
 
+
+// Method to navigate to the cart page
   async goToCart() {
     await this.cartBadge.waitFor({ state: 'visible', timeout: 10000 });
     await this.cartBadge.click();
