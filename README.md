@@ -48,7 +48,13 @@ npx playwright test
 ```bash
 npx playwright show-report
 ```
+### CI setup
 
+```
+npm ci
+npx playwright install --with-deps
+npx playwright test
+```
 ### Run Single Test
 
 ```bash
