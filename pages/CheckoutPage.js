@@ -1,3 +1,4 @@
+// pages/CheckoutPage.js
 export class CheckoutPage {
   constructor(page) {
     this.page = page;
@@ -8,6 +9,7 @@ export class CheckoutPage {
     this.continueBtn = page.locator('[data-test="continue"]');
   }
 
+  // Method to perform checkout information entry
   async checkoutInfo(first, last, postal) {
     await this.checkoutBtn.click();
     await this.firstName.fill(first);
